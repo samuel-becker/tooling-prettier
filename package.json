@@ -1,0 +1,15 @@
+{
+  "name": "tooling-sandbox",
+  "version": "1.0.0",
+  "description": "[WIP]",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/samuelbecker/tooling-sandbox.git"
+  },
+  "homepage": "https://github.com/samuelbecker/tooling-sandbox#readme",
+  "author": {
+    "name": "Samuel Becker",
+    "url": "http://github.com/samuelbecker"
+  }
+}
