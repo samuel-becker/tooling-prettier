@@ -12,8 +12,14 @@
     "name": "Samuel Becker",
     "url": "http://github.com/samuelbecker"
   },
+  "scripts": {
+    "lint": "eslint **/*.js --quiet"
+  },
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.1"
   }
 }

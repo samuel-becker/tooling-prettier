@@ -1,20 +1,20 @@
 const uuid = () => {
   let i, random;
-  let uuid = '';
+  let uuid = "";
 
   for (i = 0; i < 32; i++) {
     random = Math.random() * 16 | 0;
     if (i === 8 || i === 12 || i === 16 || i === 20) {
-      uuid += '-';
+      uuid += "-";
     }
     uuid += (i === 12 ? 4 : (i === 16 ? (random & 3 | 8) : random))
       .toString(16);
   }
 
   return uuid;
-}
+};
 
-const pluralize = (count, word) => count === 1 ? word : word + 's';
+const pluralize = (count, word) => count === 1 ? word : word + "s";
 
 class TodoApp extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class TodoApp extends React.Component {
           "title": "Install Prettier"
         }
       ]
-    }
+    };
   }
 
   addTodo(title) {
@@ -39,8 +39,8 @@ class TodoApp extends React.Component {
         id: uuid(),
         title
       }
-    )
-    this.setState({todos})
+    );
+    this.setState({todos});
   }
 
   removeTodo(id) {
@@ -51,20 +51,20 @@ class TodoApp extends React.Component {
   }
 
   render() {
-    return React.createElement('div', {
-        className: 'todoapp'
+    return React.createElement("div", {
+        className: "todoapp"
       },
       React.createElement("div", null,
         React.createElement("div", {
-            className: 'header'
+            className: "header"
           },
-          React.createElement("h1", null, 'todos'),
+          React.createElement("h1", null, "todos"),
           React.createElement(TodoInput, {
             add: this.addTodo.bind(this)
           })
         ),
-        React.createElement('section', {
-            className: 'main'
+        React.createElement("section", {
+            className: "main"
           },
           React.createElement(TodoList,
             {
@@ -83,10 +83,10 @@ class TodoApp extends React.Component {
 }
 
 const Footer = ({todos}) => {
-  if (todos.length < 1) {return null}
-  const activeTodoWord = pluralize(todos.length, 'item');
+  if (todos.length < 1) {return null;}
+  const activeTodoWord = pluralize(todos.length, "item");
   return (
-    React.createElement('footer', {className: 'footer'},
+    React.createElement("footer", {className: "footer"},
       React.createElement("span", {
           className: "todo-count"
         },
@@ -96,8 +96,8 @@ const Footer = ({todos}) => {
         " left"
       )
     )
-  )
-}
+  );
+};
 
 class TodoInput extends React.Component {
   constructor(props) {
@@ -114,26 +114,26 @@ class TodoInput extends React.Component {
 
     if (val) {
       this.props.add(val);
-      this.refs["input"].value = '';
+      this.refs["input"].value = "";
     }
   }
 
   render() {
     return (
-      React.createElement('input', {
-        className: 'new-todo',
-        ref: 'input',
+      React.createElement("input", {
+        className: "new-todo",
+        ref: "input",
         onKeyDown: e => {
-          this.handleNewTodoKeyDown(e)
+          this.handleNewTodoKeyDown(e);
         },
-        placeholder: 'What needs to be done?'
+        placeholder: "What needs to be done?"
       })
     );
   }
 }
 
 const TodoList = ({todos, remove}) => {
-  if (todos.length < 1) { return null }
+  if (todos.length < 1) { return null; }
   const todoList = todos.map((todo) => {
     return (
       React.createElement(Todo, {
@@ -141,12 +141,12 @@ const TodoList = ({todos, remove}) => {
         key: todo.id,
         remove: remove
       })
-    )
-  })
+    );
+  });
   return React.createElement("ul", {
     className: "todo-list"
   },
-  todoList)
+  todoList);
 };
 
 const Todo = ({todo, remove}) => {
@@ -157,10 +157,10 @@ const Todo = ({todo, remove}) => {
         onClick: () => remove(todo.id)
       }
     )
-  )
+  );
 };
 
 ReactDOM.render(
   React.createElement(TodoApp, null),
-  document.getElementsByClassName('todoapp')[0]
+  document.getElementsByClassName("todoapp")[0]
 );
