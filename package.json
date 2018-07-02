@@ -11,5 +11,9 @@
   "author": {
     "name": "Samuel Becker",
     "url": "http://github.com/samuelbecker"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }
