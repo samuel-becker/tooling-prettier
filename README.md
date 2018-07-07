@@ -1,3 +1,1 @@
 # tooling-sandbox
-
-# Add something here later when I understand Markdown...
